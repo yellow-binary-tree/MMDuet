@@ -1,0 +1,41 @@
+[
+    {
+        "dataset_cls": "DenseVideoCaptioningStreamDataset",
+        "video_root": "datasets/shot2story/videos",
+        "anno_file": "datasets/shot2story/annotations/dvc_train-human_anno-0.25_0.5_earlier.json",
+        "metadata_path": "datasets/shot2story/videos_metadata.json"
+    },
+    {
+        "dataset_cls": "MAGQAStreamDataset",
+        "video_root": "datasets/shot2story/videos",
+        "anno_file": "datasets/shot2story/annotations/magqa_train-0.25_0.5-earlier.json",
+        "metadata_path": "datasets/shot2story/videos_metadata.json"
+    },
+    {
+        "dataset_cls": "GroundingStreamDataset",
+        "video_root": "datasets/didemo/videos",
+        "anno_file": "datasets/didemo/annotations/train.json",
+        "metadata_path": "datasets/didemo/videos_metadata.json"
+    },
+    {
+        "dataset_cls": "GroundingStreamDataset",
+        "video_root": "datasets/hirest_grounding/videos",
+        "anno_file": "datasets/hirest_grounding/annotations/train.json",
+        "metadata_path": "datasets/hirest_grounding/videos_metadata.json",
+        "frame_fps": 0.333, "max_num_frames": 120
+    },
+    {
+        "dataset_cls": "GroundingStreamDataset",
+        "video_root": "datasets/queryd/videos",
+        "anno_file": "datasets/queryd/annotations/train.json",
+        "metadata_path": "datasets/queryd/videos_metadata.json",
+        "frame_fps": 0.5, "max_num_frames": 120
+    },
+    {
+        "dataset_cls": "DenseVideoCaptioningStreamDataset",
+        "video_root": "datasets/coin/videos",
+        "anno_file": "datasets/coin/annotations/train-0.25_0.5_earlier-120s_240s.json",
+        "metadata_path": "datasets/coin/videos_metadata.json",
+        "frame_fps": 0.5, "max_num_frames": 120
+    }
+]

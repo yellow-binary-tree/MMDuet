@@ -1,0 +1,12 @@
+__pycache__/
+/outputs
+/datasets
+/dataset_upload
+/ffmpeg
+
+**/debug.ipynb
+**/debug.py
+**/nohup.out
+/scripts
+/demo
+/test/dvc/metrics/data/paraphrase-en.gz

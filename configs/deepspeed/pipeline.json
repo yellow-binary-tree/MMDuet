@@ -1,0 +1,28 @@
+{
+    "bf16": {
+        "enabled": true
+    },
+    "zero_optimization": {
+        "stage": 1
+    },
+    "optimizer": {
+        "type": "AdamW",
+        "params": {
+            "lr": 2e-5,
+            "betas": [0.9,0.99],
+            "eps": 1e-7,
+            "weight_decay": 0
+        }
+    },
+    "scheduler": {
+        "type": "WarmupLR",
+        "params": {
+            "warmup_min_lr": 0,
+            "warmup_max_lr": 2e-5,
+            "warmup_num_steps": 100
+        }
+    },
+    "gradient_accumulation_steps": 32,
+    "train_micro_batch_size_per_gpu": 1,
+    "stage3_gather_16bit_weights_on_model_save": false
+}
