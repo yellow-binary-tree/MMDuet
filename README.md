@@ -8,7 +8,7 @@ Official implementation of paper *VideoLLM Knows When to Speak: Enhancing Time-S
 
 # Introduction
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/n1OybwhQvtk?si=PduDXT9SHScn3WUP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Watch video on Youtube](http://img.youtube.com/vi/n1OybwhQvtk/0.jpg)](https://www.youtube.com/watch?v=n1OybwhQvtk)
 
 Video also available on [Bilibili (゜-゜)つロ干杯~](https://www.bilibili.com/video/BV1nwzGYBEPE)
 
