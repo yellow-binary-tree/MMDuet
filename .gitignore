@@ -7,6 +7,4 @@ __pycache__/
 **/debug.ipynb
 **/debug.py
 **/nohup.out
-/scripts
-/demo
 /test/dvc/metrics/data/paraphrase-en.gz
