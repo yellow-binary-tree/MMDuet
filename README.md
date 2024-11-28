@@ -1,7 +1,7 @@
 # MMDuet
-[![Static Badge](https://img.shields.io/badge/Dataset-Huggingface-yellow)](https://huggingface.co/datasets/wangyueqian/MMDuetIT)
-[![Static Badge](https://img.shields.io/badge/Model-Huggingface-yellow)](https://huggingface.co/wangyueqian/MMDuet)
-<!-- [![arXiv](https://img.shields.io/badge/arXiv-1234.56789-b31b1b.svg)](https://arxiv.org/abs/1234.56789) -->
+[![Static Badge](https://img.shields.io/badge/🤗Model-MMDuet-yellow)](https://huggingface.co/wangyueqian/MMDuet)
+[![Static Badge](https://img.shields.io/badge/🤗Dataset-MMDuetIT-yellow)](https://huggingface.co/datasets/wangyueqian/MMDuetIT)
+[![arXiv](https://img.shields.io/badge/arXiv-2411.17991-b31b1b.svg)](https://arxiv.org/abs/2411.17991)
 
 
 Official implementation of paper *VideoLLM Knows When to Speak: Enhancing Time-Sensitive Video Comprehension with Video-Text Duet Interaction Format*
@@ -14,7 +14,7 @@ Video also available on [Bilibili (゜-゜)つロ干杯~](https://www.bilibili.c
 
 MMDuet is a VideoLLM implemented in the *video-text duet interaction format*, which treats the video stream as a role in the conversation akin to the user and the assistant. Under this interaction format, the video is continuously played and input to the model frame-by-frame. Both the user and model can insert their text messages right after any frame during the video play. When a text message ends, the video continues to play, akin to the show of two performers in a duet. 
 
-This interaction not only ensures a timely response for video comprehension, but also improves the performance on many time-sensitive video-text multimodal tasks, such as temporal video grounding, highlight detection, and dense video captioning.
+**This not only ensures a timely response for video comprehension, but also improves the performance on many time-sensitive video-text multimodal tasks, such as temporal video grounding, highlight detection, and dense video captioning.**
 
 # Installation
 1. Create conda environment and use pip to install some packages
@@ -89,5 +89,13 @@ The following projects has been of great help to this work:
 # Citation
 If you find this work useful in your research, please consider citing:
 ```bibtex
-
+@misc{wang2024mmduet,
+      title={VideoLLM Knows When to Speak: Enhancing Time-Sensitive Video Comprehension with Video-Text Duet Interaction Format}, 
+      author={Yueqian Wang and Xiaojun Meng and Yuxuan Wang and Jianxin Liang and Jiansheng Wei and Huishuai Zhang and Dongyan Zhao},
+      year={2024},
+      eprint={2411.17991},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2411.17991}, 
+}
 ```
