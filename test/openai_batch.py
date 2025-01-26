@@ -170,12 +170,10 @@ def openai_send_batch(batch_input_fname, description="debug"):
 def openai_get_batch(output_file_id, output_fname):
     from openai import OpenAI
     client = OpenAI()
-    # batch_status = client.batches.retrieve(batch_id)
-    # output_file_id = batch_status.output_file_id
     if output_file_id is not None:
         file_response = client.files.content(output_file_id)
         print(f'saving result file {output_file_id} to {output_fname}')
-        os.makedirs(os.path.dirname(output_file), exist_ok=True)
+        os.makedirs(os.path.dirname(output_fname), exist_ok=True)
         with open(output_fname, 'w') as f_out:
             f_out.write(file_response.text)
     else:
