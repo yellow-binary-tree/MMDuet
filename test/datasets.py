@@ -41,7 +41,7 @@ class FastAndAccurateStreamingVideoQADataset(Dataset):
         output_width = output_height = self.output_resolution
 
         output_fps = self.output_fps if self.output_fps > 0 else self.max_num_frames / video_duration
-        num_frames_total = math.floor(video_duration * output_fps)
+        num_frames_total = math.ceil(video_duration * output_fps)
         frame_sec = [i / output_fps for i in range(num_frames_total)]
         frame_list, cur_time, frame_index = [], 0, 0
         while cap.isOpened():

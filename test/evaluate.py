@@ -222,10 +222,11 @@ if __name__ == '__main__':
             if args.is_online_model:
                 pass        # do not need to reformat model output
             else:       # convert the timechat/vtimellm generated text to online model format
+                model_response = example['model_response'][0] if isinstance(example['model_response'], list) else example['model_response']
                 model_response_list = list()
                 # vtimellm format
                 pattern = r"From (\d+) to (\d+), (.*)"
-                matches = re.findall(pattern, example['model_response'][0])
+                matches = re.findall(pattern, model_response)
                 captions = list()
                 video_length = example['video_duration']
                 for match in matches:
@@ -235,7 +236,7 @@ if __name__ == '__main__':
 
                 # timechat format
                 pattern = r"(\d+\.\d+) - (\d+\.\d+)\s*seconds,\s*(.*)"
-                matches = re.findall(pattern, example['model_response'][0])
+                matches = re.findall(pattern, model_response)
                 captions, start_time = list(), 0
                 for match in matches:
                     start_time, end_time, caption = float(match[0]), float(match[1]), match[2]
@@ -245,7 +246,7 @@ if __name__ == '__main__':
                 if len(model_response_list) == 0:
                     # the answer is not generated as grounded format; we use the entire response as 1 turn of answer, and set time = -1
                     # this example can pair with any gold span
-                    model_response_list.append({'time': -1, 'content': example['model_response'][0], 'role': 'assistant'})
+                    model_response_list.append({'time': -1, 'content': model_response, 'role': 'assistant'})
                 example['model_response_list'] = model_response_list
 
             if 'model_response_list' in example:
@@ -448,10 +449,11 @@ if __name__ == '__main__':
                     captions.append({'timestamp': [start_time, end_time], 'caption': prev_sent})
                 pred_out[str(pred_example['question_id'])] = captions
             else:
+                model_response = pred_example['model_response'][0] if isinstance(pred_example['model_response'], list) else pred_example['model_response']
                 if 'vtimellm' in args.pred_file:
                     # this is a vtimellm format response
                     pattern = r"From (\d+) to (\d+), (.*)"
-                    matches = re.findall(pattern, pred_example['model_response'][0])
+                    matches = re.findall(pattern, model_response)
                     captions = list()
                     video_length = pred_example['video_duration']
                     for match in matches:
@@ -461,7 +463,7 @@ if __name__ == '__main__':
                     # this is a timechat format response
                     pattern = r"(\d+\.\d+) - (\d+\.\d+)\s*seconds,\s*(.*)"
                     # pattern = r"(\d+\.\d+)\s*seconds,\s*(.*)"
-                    matches = re.findall(pattern, pred_example['model_response'][0])
+                    matches = re.findall(pattern, model_response)
                     captions = list()
                     for match in matches:
                         start_time, end_time, action = float(match[0]), float(match[1]), match[2]
